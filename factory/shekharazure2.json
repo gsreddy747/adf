@@ -1,0 +1,9 @@
+{
+	"name": "shekharazure2",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a0fe19ed-f578-4bd9-b029-0eb9bea2cf19",
+		"tenantId": "a0dc1af4-ba83-4799-bd33-78e82ece830f"
+	}
+}
