@@ -1,0 +1,27 @@
+{
+	"name": "azuredataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"linkedService": {
+						"referenceName": "AzureBlobStorage1",
+						"type": "LinkedServiceReference"
+					},
+					"name": "storagesource"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "Select1"
+				},
+				{
+					"name": "Filter1"
+				}
+			],
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: true,\n\tignoreNoFilesFound: false,\n\tlimit: 100,\n\tformat: 'delimited',\n\tcontainer: 'sample',\n\tfileName: 'part-00000-7b2b2c30-eb5e-4ab6-af89-28fae7bdb9e4-c000.csv',\n\tcolumnDelimiter: ',',\n\tescapeChar: '\\\\',\n\tqutoChar: '\\\"',\n\tcolumnNamesAsHeader: false) ~> storagesource\nstoragesource select(skipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nSelect1 filter(color != 'red') ~> Filter1"
+		}
+	}
+}
