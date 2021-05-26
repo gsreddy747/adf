@@ -27,6 +27,25 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "listiterate",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "listtables",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('listtables').output.value",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"annotations": []
