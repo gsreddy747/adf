@@ -1,0 +1,40 @@
+{
+	"name": "CosmosDbSqlApiCollection2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CosmosDb2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CosmosDbSqlApiCollection",
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Address": {
+					"type": "string"
+				},
+				"Country": {
+					"type": "string"
+				},
+				"Latitude": {
+					"type": "string"
+				},
+				"Id": {
+					"type": "string"
+				},
+				"City": {
+					"type": "string"
+				},
+				"Longitude": {
+					"type": "string"
+				},
+				"Name": {
+					"type": "string"
+				}
+			}
+		},
+		"typeProperties": {
+			"collectionName": "hotel"
+		}
+	}
+}
